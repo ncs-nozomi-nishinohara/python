@@ -16,8 +16,7 @@ RUN set -x \
     && chmod +x /usr/bin/wait-for-it.sh \
     && chmod +x /usr/bin/docker-entrypoint.sh \
     && apt-get update -y \
-    && apt-get install --yes --no-install-recommends \
-    netcat
+    && apt-get install -y netcat
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 
