@@ -6,7 +6,6 @@ ENV TZ 'Asia/Tokyo'
 LABEL maintainer="nozomi ishinohara < nozomi_nishinohara@n-creativesystem.com>"
 
 COPY bashrc /root/.bashrc
-
 COPY wait-for-it.sh /usr/bin/
 COPY docker-entrypoint.sh /usr/bin/
 

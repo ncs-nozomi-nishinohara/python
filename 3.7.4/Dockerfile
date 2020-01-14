@@ -1,7 +1,7 @@
 FROM python:3.7.4
 
-ENV DEBIAN_FRONTEND noninteractive \
-    && TZ 'Asia/Tokyo'
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ 'Asia/Tokyo'
 
 LABEL maintainer="nozomi ishinohara < nozomi_nishinohara@n-creativesystem.com>"
 

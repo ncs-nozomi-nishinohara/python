@@ -1,6 +1,6 @@
-FROM tensorflow/tensorflow:1.14.0-gpu-py3
-ENV DEBIAN_FRONTEND noninteractive \
-    && TZ 'Asia/Tokyo'
+FROM ibmcom/tensorflow-ppc64le:1.14.0-gpu-py3
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ 'Asia/Tokyo'
 
 LABEL maintainer="nozomi ishinohara < nozomi_nishinohara@n-creativesystem.com>"
 
