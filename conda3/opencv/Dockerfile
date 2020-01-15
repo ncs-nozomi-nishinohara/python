@@ -18,9 +18,11 @@ RUN set -x \
     && git clone https://github.com/ncs-nozomi-nishinohara/opencv.git -b 4.1.1 \
     && cd opencv \
     && git checkout -b 4.1.1 \
+    && cd ../ \
     && git clone https://github.com/ncs-nozomi-nishinohara/opencv_contrib.git -b 4.1.1 \
     && cd opencv_contrib \
     && git checkout -b 4.1.1 \
+    && cd ../ \
     && cd opencv \
     && mkdir build \
     && cd build/ \
