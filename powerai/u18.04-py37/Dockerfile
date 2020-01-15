@@ -1,4 +1,5 @@
 FROM ibmcom/powerai:1.6.2-tensorflow-cpu-ubuntu18.04-py37 as opencv
+SHELL ["/bin/bash", "-l", "-c"]
 USER root
 RUN set -x \
     && apt-get update \
@@ -18,8 +19,8 @@ USER pwrai
 
 RUN set -x \
     && cd ~ \
-    && /opt/anaconda/condabin/conda activate base \
-    && /opt/anaconda/condabin/conda activate wmlce \
+    && conda activate base \
+    && conda activate wmlce \
     && mkdir work \
     && cd work \
     && git clone -b 4.1.1 https://github.com/ncs-nozomi-nishinohara/opencv_contrib.git \
