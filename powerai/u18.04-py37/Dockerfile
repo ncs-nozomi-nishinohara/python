@@ -1,5 +1,4 @@
-FROM ibmcom/powerai:1.6.2-tensorflow-cpu-ubuntu18.04-py37 as opencv
-USER root
+FROM ncsnozominishinohara/python:3.6.8-gpu-ppc64le
 RUN set -x \
     && apt-get update \
     && apt-get upgrade -y \
@@ -46,22 +45,22 @@ RUN set -x \
     make -j20 \
     make install
 
-FROM ibmcom/powerai:1.6.2-tensorflow-cpu-ubuntu18.04-py37
-ENV DEBIAN_FRONTEND noninteractive
-ENV TZ 'Asia/Tokyo'
+# FROM ibmcom/powerai:1.6.2-tensorflow-cpu-ubuntu18.04-py37
+# ENV DEBIAN_FRONTEND noninteractive
+# ENV TZ 'Asia/Tokyo'
 
-LABEL maintainer="nozomi ishinohara < nozomi_nishinohara@n-creativesystem.com>"
+# LABEL maintainer="nozomi ishinohara < nozomi_nishinohara@n-creativesystem.com>"
 
-COPY --from=opencv /opt/anaconda/envs/wmlce/lib/python3.7/site-packages/cv2/python-3.7 /opt/anaconda/envs/wmlce/lib/python3.7/site-packages/cv2/python-3.7
-COPY bashrc /root/.bashrc
-COPY wait-for-it.sh /usr/bin/
+# COPY --from=opencv /opt/anaconda/envs/wmlce/lib/python3.7/site-packages/cv2/python-3.7 /opt/anaconda/envs/wmlce/lib/python3.7/site-packages/cv2/python-3.7
+# COPY bashrc /root/.bashrc
+# COPY wait-for-it.sh /usr/bin/
 
-RUN set -x \
-    && apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install -y  --no-install-recommends \
-    netcat \
-    && rm -rf /var/lib/apt/lists/* \
-    && mkdir -p /home/pwrai/app
+# RUN set -x \
+#     && apt-get update \
+#     && apt-get upgrade -y \
+#     && apt-get install -y  --no-install-recommends \
+#     netcat \
+#     && rm -rf /var/lib/apt/lists/* \
+#     && mkdir -p /home/pwrai/app
 
-WORKDIR /home/pwrai/app
+# WORKDIR /home/pwrai/app
