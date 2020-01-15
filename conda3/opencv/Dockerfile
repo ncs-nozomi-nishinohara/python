@@ -25,7 +25,7 @@ RUN set -x \
     && cd ../
 RUN set -x \
     && apt-get update \
-    && apt-get install --no-install-recommends cmake \
+    && apt-get install -y --no-install-recommends cmake \
     git \
     libgtk2.0-dev \
     pkg-config \
