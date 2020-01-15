@@ -35,11 +35,11 @@ RUN set -x \
     -DPYTHON3_LIBRARY=$(python3 -c "from distutils.sysconfig import get_config_var;from os.path import dirname,join ; print(join(dirname(get_config_var('LIBPC')),get_config_var('LDLIBRARY')))") \
     -DPYTHON3_NUMPY_INCLUDE_DIRS=$(python3 -c "import numpy; print(numpy.get_include())") \
     -DPYTHON3_PACKAGES_PATH=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
+    -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
+    -DCMAKE_BUILD_TYPE=Release \
     .. \
     && make -j20 \
     && make install
-# -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
-# -DCMAKE_BUILD_TYPE=Release \
 
 # FROM ibmcom/powerai:1.6.2-tensorflow-cpu-ubuntu18.04-py37
 # ENV DEBIAN_FRONTEND noninteractive
