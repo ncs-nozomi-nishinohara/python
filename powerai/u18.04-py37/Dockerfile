@@ -1,6 +1,7 @@
 FROM ibmcom/powerai:1.6.2-tensorflow-cpu-ubuntu18.04-py37 as opencv
 USER root
-RUN apt-get update \
+RUN set -x \
+    && apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends \
     wget \
@@ -10,6 +11,7 @@ RUN apt-get update \
     make \
     gcc \
     g++ \
+    python3-numpy \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir /work \
     && cd /work \
@@ -51,12 +53,14 @@ COPY --from=opencv /work/opencv_contrib/build /work/opencv_contrib/build
 COPY bashrc /root/.bashrc
 COPY wait-for-it.sh /usr/bin/
 
-RUN apt-get update \
+RUN set -x \
+    && apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y  --no-install-recommends \
     wget \
     netcat \
     make \
+    cmake \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /usr/app/src \
     && chmod -R 755 /usr/app/src \
