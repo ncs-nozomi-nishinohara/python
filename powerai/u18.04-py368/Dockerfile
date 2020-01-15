@@ -36,8 +36,8 @@ RUN set -x \
     -DPYTHON3_NUMPY_INCLUDE_DIRS=$(python3 -c "import numpy; print(numpy.get_include())") \
     -DPYTHON3_PACKAGES_PATH=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
     .. \
-    make -j20 \
-    make install
+    && make -j20 \
+    && make install
 # -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
 # -DCMAKE_BUILD_TYPE=Release \
 
