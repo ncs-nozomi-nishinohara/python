@@ -14,9 +14,9 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-ppc64le.sh -O miniconda.sh \
     && chmod +x miniconda.sh \
-    && bash miniconda.sh -b -p $HOME/miniconda
+    && bash miniconda.sh -b -p /root/miniconda
 
-ENV PATH="$HOME/miniconda/bin:$PATH"
+ENV PATH="/root/miniconda/bin:$PATH"
 
 RUN conda config --set always_yes yes \
     && conda info -a \
