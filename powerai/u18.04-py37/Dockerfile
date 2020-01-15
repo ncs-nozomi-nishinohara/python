@@ -14,10 +14,8 @@ RUN set -x \
     python3-numpy \
     && rm -rf /var/lib/apt/lists/*
 
-USER pwrai
-
 RUN set -x \
-    && cd ~ \
+    && cd /home/pwrai \
     && . /opt/conda/bin/activate \
     && conda activate base \
     && conda activate wmlce \
