@@ -23,7 +23,9 @@ RUN set -x \
     && cd opencv_contrib \
     && git checkout -b 4.1.1 \
     && cd ../
-RUN cd opencv \
+RUN set -x \
+    && conda install numpy scipy \
+    && cd opencv \
     && mkdir build \
     && cd build/ \
     && cmake -DWITH_JPEG=ON -DWITH_OPENCL=OFF \
