@@ -15,10 +15,10 @@ RUN set -x \
     && rm -rf /var/lib/apt/lists/*
 
 USER pwrai
-SHELL ["/bin/bash", "-l", "-c"]
 
 RUN set -x \
     && cd ~ \
+    && . /opt/conda/bin/activate \
     && conda activate base \
     && conda activate wmlce \
     && mkdir work \
