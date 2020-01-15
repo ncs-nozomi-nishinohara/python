@@ -14,12 +14,8 @@ RUN set -x \
     && rm -rf /var/lib/apt/lists/*
 
 RUN set -x \
-    && cd /home/pwrai \
-    && . /opt/conda/bin/activate \
-    && conda activate base \
-    && conda activate wmlce \
-    && mkdir work \
-    && cd work \
+    && mkdir /work \
+    && cd /work \
     && git clone -b 4.1.1 https://github.com/ncs-nozomi-nishinohara/opencv_contrib.git \
     && git clone -b 4.1.1 https://github.com/ncs-nozomi-nishinohara/opencv.git \
     && mkdir -p opencv/build \
