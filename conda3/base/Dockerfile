@@ -10,7 +10,7 @@ COPY wait-for-it.sh /usr/bin/
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y wget netcat lftp \
+    && apt-get install -y wget netcat lftp git \
     && rm -rf /var/lib/apt/lists/* \
     && wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-ppc64le.sh -O miniconda.sh \
     && chmod +x miniconda.sh \
