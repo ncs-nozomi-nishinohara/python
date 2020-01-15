@@ -18,6 +18,8 @@ USER pwrai
 
 RUN set -x \
     && cd ~ \
+    && conda activate base \
+    && conda activate wmlce \
     && mkdir work \
     && cd work \
     && git clone -b 4.1.1 https://github.com/ncs-nozomi-nishinohara/opencv_contrib.git \
