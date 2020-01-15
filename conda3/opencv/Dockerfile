@@ -24,7 +24,8 @@ RUN set -x \
     && git checkout -b 4.1.1 \
     && cd ../
 RUN set -x \
-    && conda install numpy scipy \
+    && apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev \
+    && python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev \
     && cd opencv \
     && mkdir build \
     && cd build/ \
