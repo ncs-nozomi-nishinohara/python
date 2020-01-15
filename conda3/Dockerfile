@@ -14,6 +14,7 @@ RUN apt-get update \
     && apt-get install -y wget netcat lftp \
     && wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-ppc64le.sh -O miniconda.sh \
     && chmod +x miniconda.sh \
+    && bash miniconda.sh -b -p $HOME/miniconda \
     && conda config --set always_yes yes \
     && conda info -a \
     && conda install conda-build \
