@@ -1,5 +1,4 @@
 FROM ibmcom/powerai:1.6.2-tensorflow-cpu-ubuntu18.04-py37 as opencv
-SHELL ["/bin/bash", "-l", "-c"]
 USER root
 RUN set -x \
     && apt-get update \
@@ -16,6 +15,7 @@ RUN set -x \
     && rm -rf /var/lib/apt/lists/*
 
 USER pwrai
+SHELL ["/bin/bash", "-l", "-c"]
 
 RUN set -x \
     && cd ~ \
