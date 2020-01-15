@@ -22,8 +22,8 @@ RUN set -x \
     && git clone https://github.com/ncs-nozomi-nishinohara/opencv_contrib.git -b 4.1.1 \
     && cd opencv_contrib \
     && git checkout -b 4.1.1 \
-    && cd ../ \
-    && cd opencv \
+    && cd ../
+RUN cd opencv \
     && mkdir build \
     && cd build/ \
     && cmake -DWITH_JPEG=ON -DWITH_OPENCL=OFF \
