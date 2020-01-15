@@ -20,7 +20,7 @@ ENV PATH="/root/miniconda/bin:$PATH"
 RUN conda config --set always_yes yes \
     && conda info -a \
     && conda install conda-build \
-    && conda install scipy sklearn \
+    && conda install scipy scikit-learn \
     && mkdir -p /usr/app/src \
     && chmod +x /usr/bin/wait-for-it.sh
 
