@@ -40,7 +40,7 @@ RUN set -x \
     .. \
     && make -j20 \
     && make install
-
+COPY cv2 /work/cv2
 # FROM ibmcom/powerai:1.6.2-tensorflow-cpu-ubuntu18.04-py37
 # ENV DEBIAN_FRONTEND noninteractive
 # ENV TZ 'Asia/Tokyo'
