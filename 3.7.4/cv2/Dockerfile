@@ -1,4 +1,4 @@
-FROM ncsnozominishinohara/python:3.6.8-gpu-ppc64le
+FROM ncsnozominishinohara/python:3.7.4-ppc64le
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ 'Asia/Tokyo'
 
