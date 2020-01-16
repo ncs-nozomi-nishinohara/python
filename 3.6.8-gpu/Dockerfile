@@ -15,9 +15,7 @@ RUN set -x \
     && chmod +x /usr/bin/docker-entrypoint.sh \
     && apt-get update -y \
     && apt-get install -y --no-install-recommends \
-    netcat \
-    python3-numpy \
-    python3-scipy
+    netcat
 
 WORKDIR /usr/app/src
 
