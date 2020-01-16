@@ -14,7 +14,10 @@ RUN set -x \
     && chmod +x /usr/bin/wait-for-it.sh \
     && chmod +x /usr/bin/docker-entrypoint.sh \
     && apt-get update -y \
-    && apt-get install -y netcat
+    && apt-get install -y --no-install-recommends \
+    netcat \
+    python3-numpy \
+    python3-scipy
 
 WORKDIR /usr/app/src
 
