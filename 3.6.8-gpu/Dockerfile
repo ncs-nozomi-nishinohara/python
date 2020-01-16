@@ -2,7 +2,7 @@ FROM ibmcom/tensorflow-ppc64le:1.14.0-gpu-py3
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ 'Asia/Tokyo'
 
-LABEL maintainer="nozomi ishinohara < nozomi_nishinohara@n-creativesystem.com>"
+LABEL maintainer="nozomi nishinohara < nozomi_nishinohara@n-creativesystem.com>"
 
 COPY bashrc /root/.bashrc
 COPY wait-for-it.sh /usr/bin/
