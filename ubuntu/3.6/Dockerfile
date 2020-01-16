@@ -17,6 +17,8 @@ RUN apt-get update \
     && mkdir -p /usr/app/src \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip install cython -U pip
+
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 
 WORKDIR /usr/app/src
