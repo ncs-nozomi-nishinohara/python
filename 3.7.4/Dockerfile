@@ -1,7 +1,7 @@
-FROM python:3.7.4
+FROM --platform=$BUILDPLATFORM python:3.7.4
 
-ENV DEBIAN_FRONTEND noninteractive \
-    && TZ 'Asia/Tokyo'
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ 'Asia/Tokyo'
 
 LABEL maintainer="nozomi ishinohara < nozomi_nishinohara@n-creativesystem.com>"
 
@@ -11,11 +11,11 @@ COPY docker-entrypoint.sh /usr/bin/
 
 RUN set -x \
     && mkdir -p /usr/app/src \
+    && apt-get update -y \
+    && apt-get install -y --no-install-recommends netcat \
     && rm -rf /var/lib/apt/lists/* \
     && chmod +x /usr/bin/wait-for-it.sh \
-    && chmod +x /usr/bin/docker-entrypoint.sh \
-    && apt-get update -y \
-    && apt-get install -y netcat
+    && chmod +x /usr/bin/docker-entrypoint.sh
 
 WORKDIR /usr/app/src
 
